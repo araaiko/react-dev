@@ -1,14 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const ToggleButton = () => {
     const [open, setOpen] = useState(false);
     const toggle = () => {
-        setOpen(prevState => !prevState);
+        setOpen(prevState => !prevState);        
     }
 
+    useEffect(() => {
+        console.log(open);
+    });
+    
     return (
         <button onClick={toggle}>
-            {open ? 'OPEN':'CLOSE'}
+            {open ? 'OPEN' : 'CLOSE'}
         </button>
     );
 }
